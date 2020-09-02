@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>findIndex方法介绍</title>
+</head>
+
+<body>
+    <script>
+        // findIndex方法 用来查找数组中符合条件的第一个数组成员的位置，如果没找到返回 -1
+        let ary = [10, 15, 20, 25, 30];
+        let index = ary.findIndex(item => item > 20);
+        console.log(index); //3
+        let index1 = ary.findIndex(item => item > 30);
+        console.log(index1); //-1
+    </script>
+</body>
+
+</html>

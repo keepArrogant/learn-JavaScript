@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板字符串</title>
+</head>
+
+<body>
+    <script>
+        // 模板字符串用反引号定义
+        let name = `张三`;
+        let sayHello = `Hello,我的名字叫${name}`;
+        console.log(sayHello);
+
+
+
+        let result = {
+            name: '古力娜扎',
+            age: 27,
+            sex: '女'
+        }
+        let html = `<div>
+            <span>${result.name}</span>
+            <span>${result.age}</span>
+            <span>${result.sex}</span>
+        </div>`
+        console.log(html);
+
+
+        const fn = () => '我是fn函数';
+
+        let res = `我是模板字符串，我可以调用函数: ${fn()}`;
+        console.log(res)
+    </script>
+</body>
+
+</html>

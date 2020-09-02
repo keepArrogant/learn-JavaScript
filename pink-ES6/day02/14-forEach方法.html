@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach方法</title>
+</head>
+
+<body>
+    <script>
+        // forEach 迭代(遍历) 数组
+        // var arr = [1, 2, 3];
+        var sum = 0;
+        arr.forEach(function (value, index, array) {
+            console.log('每个数组元素：' + value);
+            console.log('每个数组元素的索引：' + index);
+            console.log('数组本身：' + array);
+            sum += value;
+        });
+    </script>
+</body>
+
+</html>

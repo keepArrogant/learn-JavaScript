@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter筛选数组</title>
+</head>
+
+<body>
+    <script>
+        var arr = [12, 31, 22, 19];
+        var newArr = arr.filter(function (value, index) {
+            // return value >= 20;
+            return value % 2 === 0;
+        });
+        console.log(newArr);
+    </script>
+</body>
+
+</html>

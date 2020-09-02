@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>思考题</title>
+</head>
+
+<body>
+    <script>
+        // 思考题 1 ：
+
+        var name = 'The Window';
+        var object = {
+            name: 'My Object',
+            getNameFunc: function () {
+                return function () {
+                    return this.name;
+                };
+            }
+        };
+
+        console.log(object.getNameFunc()()); //The Window
+        // 相当于
+        var f = object.getNameFunc();
+        var f = function () {
+            return this.name;
+        }
+        f();
+        //最后没有闭包的产生 this 指向window
+
+        // 思考题 2：
+        var name = 'The Window';
+        var object = {
+            name: 'My Object',
+            getNameFunc: function () {
+                var that = this;
+                return function () {
+                    return that.name;
+                };
+            }
+        };
+
+        console.log(object.getNameFunc()()); //My Object
+        // 相当于
+        var f = object.getNameFunc();
+        f = function () {
+            return that.name;
+        };
+        f();
+        // 有闭包的产生。闭包的函数是 getNameFunc()    this传递给that的是object这个函数  所以最后指向的是object的name属性
+    </script>
+</body>
+
+</html>

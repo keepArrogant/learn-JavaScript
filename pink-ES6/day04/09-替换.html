@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>替换</title>
+    <style>
+        textarea {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="message"></textarea><button>提交</button>
+    <div></div>
+    <script>
+        // 替换  replace
+        // var str = 'andy和red';
+        // var newStr = str.replace('andy', 'baby');
+        // var newStr = str.replace(/andy/, 'baby');
+        // console.log(newStr);
+        var text = document.querySelector('textarea');
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick = function () {
+            div.innerHTML = text.value.replace(/草|干|杀|日|逼|鸡巴|奶子|gay|激情|射|插/g, '**');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类的继承</title>
+</head>
+
+<body>
+    <script>
+        // class Father {
+        //     constructor() {
+
+        //     }
+        //     money() {
+        //         console.log(100);
+        //     }
+        // }
+        // class Son extends Father {
+
+        // }
+        // var son = new Son();
+        // son.money();
+
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            sum() {
+                console.log(this.x + this.y);
+            }
+        }
+        class Son extends Father {
+            constructor(x, y) {
+                super(x, y); //调用了父类中的构造函数 
+            }
+        }
+        var son = new Son(1, 2);
+        son.sum();
+
+        // 1.实例化son对象，并把1，2参数给son的构造函数
+        // 2.构造函数又调用父类的构造函数
+        // 3.son类调用sum方法，sum方法继承于父类
+        // 4.父类里把构造函数的x，y值传递给sum方法调用输出结果
+    </script>
+
+
+</body>
+
+</html>

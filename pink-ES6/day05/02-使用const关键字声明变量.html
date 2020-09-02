@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用const关键字声明常量</title>
+</head>
+
+<body>
+    <script>
+        // 使用const关键字声明的常量具有块级作用域
+        // 使用const关键字声明常量时必须赋初始值
+        // 常量声明后值不可更改
+
+
+        // 使用const关键字声明的常量具有块级作用域
+        // if (true) {
+        //     const a = 10;
+        //     if (true) {
+        //         const a = 20;
+        //         console.log(a); //20
+        //     }
+        //     console.log(a); //10
+        // }
+        // console.log(a); //a is not defined
+
+
+        // 使用const关键字声明常量时必须赋初始值
+        // const PI; // Missing initializer in const declaration
+
+        // 常量声明后值不可更改
+        // const PI = 3.14;
+        // PI = 1000; // Assignment to constant variable. 赋值给常量变量 错误
+        // console.log(PI);
+
+        const ary = [100, 200];
+        ary[0] = 'red'; //里面的数据可以变
+        ary[1] = 'pink';
+        // 给常量重新赋值 导致常量的内存地址改变 报错   所以：常量值对应的内存地址不可以更改
+        ary = ['red', 'pink']; //// Assignment to constant variable
+        console.log(ary);
+    </script>
+</body>
+
+</html>

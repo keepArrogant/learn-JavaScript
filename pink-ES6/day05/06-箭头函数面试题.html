@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数面试题</title>
+</head>
+
+<body>
+    <script>
+        var age = 100;
+
+        var obj = {
+            age: 20,
+            say: () => {
+                alert(this.age); //因为箭头函数定义在全局下，this指向的是window 所以 window.age = 100; 
+            }
+        }
+
+        obj.say();
+    </script>
+</body>
+
+</html>

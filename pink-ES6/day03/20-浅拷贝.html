@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深拷贝和浅拷贝</title>
+</head>
+
+<body>
+    <script>
+        // 浅拷贝只是拷贝一层，更深层次对象级别的只拷贝引用
+
+        var obj = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                age: 18
+            }
+        };
+        var o = {};
+        // for (var k in obj) {
+        //     // k是属性名  obj[k]是属性值
+        //     o[k] = obj[k];
+        // }
+        // console.log(o);
+        // o.msg.age = 20;
+        // console.log(obj);
+
+        console.log('---------------------');
+        // ES6中新增的浅拷贝方法
+        Object.assign(o, obj);
+        console.log(o);
+        o.msg.age = 20;
+        console.log(obj);
+    </script>
+</body>
+
+</html>

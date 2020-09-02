@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>座机号码验证</title>
+</head>
+
+<body>
+    <script>
+        // 座机号码验证： 全国座机号码 两种格式： 010-12345678 或者 0717-1234567
+        // 正则里面的或者符号: |
+        var reg = /^\d{3}-\d{8}|\d{4}-\d{7}$/;
+        // var reg1 = /^\d{3,4}-\d{7,8}$/; //有bug  当前面数字是4位 后面数字为8位也可以匹配到 这样不符合座机号码的1位了 
+    </script>
+</body>
+
+</html>

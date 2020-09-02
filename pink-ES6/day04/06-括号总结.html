@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>括号总结</title>
+</head>
+
+<body>
+    <script>
+        // 中括号 字符集合 匹配方括号中的任意字符
+        var reg = /^[abc]$/;
+
+        var reg = /^[abc]{3}$/ //表示a|b|c 随便组成三个就行
+        console.log(reg.test('abc')); //true
+        console.log(reg.test('abcd')); //false
+        console.log(reg.test('abccc')); //false
+        console.log('--------------------');
+
+        // a可以 b 也可以 c也可以  a||b ||c
+        // 大括号 量词符  里面表示重复次数
+        var reg = /^abc{3}$/ //它只是让c重复三次  abccc 才符合
+        console.log(reg.test('abc')); //false
+        console.log(reg.test('abcabcabc')); //false
+        console.log(reg.test('abccc')); //true
+        console.log('--------------------');
+
+        // 小括号 表示优先级
+        var reg = /^(abc){3}$/ //让括号里的重复三次  abcabcabc 才符合
+        console.log(reg.test('abc')); //false
+        console.log(reg.test('abcabcabc')); //true
+        console.log(reg.test('abccc')); //false
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包应用-定时器中的闭包</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>炒粉</li>
+        <li>烧烤</li>
+        <li>火锅</li>
+        <li>披萨</li>
+    </ul>
+    <script>
+        var lis = document.querySelector('.nav').querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            (function (i) {
+                setTimeout(function () {
+                    console.log(lis[i].innerHTML);
+                }, 3000);
+            })(i);
+        }
+    </script>
+</body>
+
+</html>

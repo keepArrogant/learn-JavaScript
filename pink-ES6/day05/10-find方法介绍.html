@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find方法介绍</title>
+</head>
+
+<body>
+    <script>
+        var ary = [{
+            id: 1,
+            name: '张三'
+        }, {
+            id: 2,
+            name: '李四'
+        }];
+        let target = ary.find(item => item.name == '张三');
+        console.log(target); //{id: 1, name: '张三'};
+        // 如果查找不到返回undefined
+        let target1 = ary.find(item => item.id == 3);
+        console.log(target1)
+    </script>
+</body>
+
+</html>

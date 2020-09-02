@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用let关键字声明变量</title>
+</head>
+
+<body>
+    <script>
+        // let关键字就是用来声明变量的
+
+        // 使用let关键字声明的变量具有块级作用域
+
+        // 在一个大括号中，使用let关键字声明的变量才具有块级作用域var关键字是不具备这个特点的
+
+        // 防止循环变量变成全局变量
+
+        // 不存在变量提升
+
+        // 使用let关键字声明的变量具有暂时性死区特性
+
+
+
+        // let关键字就是用来声明变量的
+        let a = 10;
+        console.log(a);
+
+        // 使用let关键字声明的变量具有块级作用域
+        // if (true) {
+        //     let b = 20;
+        //     console.log(b); //20
+        //     if (true) {
+        //         let c = 30;
+        //     }
+        //     console.log(c); //c is not defined
+        // }
+        // console.log(b); //b is not defined
+
+
+        // 在一个大括号中，使用let关键字声明的变量才具有块级作用域var关键字是不具备这个特点的
+        // if (true) {
+        //     let num = 100;
+        //     var abc = 200;
+        // }
+        // console.log(abc);
+        // console.log(num); // num is not defined
+
+        // 防止循环变量变成全局变量
+        // for (let i = 0; i < 2; i++) {
+
+        // }
+        // console.log(i); // i is not defined  在循环的外面是访问不到i的
+
+
+        // 不存在变量提升
+        // console.log(d); //Cannot access 'd' before initialization  初始化d之前无法访问
+        // let d = 50;
+
+
+        // 使用let关键字声明的变量具有暂时性死区特性
+        var num = 20;
+        if (true) {
+            // 优先在{}里面寻找num  而num在下面用let声明的 所以会报错 初始化num之前无法访问
+            console.log(num); //Cannot access 'num' before initialization
+            let num = 10;
+        }
+    </script>
+</body>
+
+</html>

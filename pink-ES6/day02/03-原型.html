@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // this.sing = function () {
+            //     console.log('我会唱歌');
+            // }
+        }
+        Star.prototype.sing = function () {
+            console.log('我会唱歌')
+        }
+
+        var ldh = new Star('刘德华', 48);
+        var zxy = new Star('张学友', 53);
+        console.log(ldh.sing === zxy.sing);
+        // 把方法存放在构造函数里，两个实例化对象的方法不相等。因为实例化对象在内存中开辟了新空间，属性和静态成员存放在一个空间，但是方法会开辟新的空间，而且这两个实例化对象的方法相同，所以应该在同一块，分开就很浪费空间。
+        ldh.sing();
+        zxy.sing();
+        console.log(ldh.sing === zxy.sing); // true
+        // 一般情况下，我们的公共属性定义到构造函数里面，公共的方法我们放到原型对象身上，避免内存空间的浪费
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象解构</title>
+</head>
+
+<body>
+    <script>
+        // 对象解构允许我们使用变量的名字匹配对象的属性 匹配成功就将对象的属性赋值给变量
+
+        let Person = {
+            name: '古力娜扎',
+            age: '27',
+            sex: '女'
+        };
+        // let {
+        //     name,
+        //     age,
+        //     sex
+        // } = Person;
+        // console.log(name);
+        // console.log(age);
+        // console.log(sex);
+
+        let {
+            name: myName, //name用来匹配对象中的属性名  后面的才是要赋值变量名
+            age: myAge,
+            sex: mySex
+        } = Person;
+        console.log(myName);
+        console.log(myAge);
+        console.log(mySex);
+    </script>
+</body>
+
+</html>
