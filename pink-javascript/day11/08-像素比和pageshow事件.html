@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>像素比和pageshow事件</title>
+</head>
+
+<body>
+    <script>
+        console.log(window.devicePixelRatio);
+        // window.addEventListener('load', function () {
+        //     alert(11);
+        // })
+        window.addEventListener('pageshow', function (e) {
+            // e.persisted 返回的是true 就是说如果这个页面是从缓存取过来的页面，也需要重新计算一下rem 的大小
+            if (e.persisted) {
+                // fn(); //调用外部函数
+            }
+        })
+        // 因为火狐有缓存机制，页面前进和后退不会重新加载load事件 ，所以把load事件改为 pageshow 事件 就可以了
+    </script>
+    <a href="http://www.baidu.com">链接</a>
+</body>
+
+</html>

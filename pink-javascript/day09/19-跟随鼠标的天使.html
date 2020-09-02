@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跟随鼠标的天使</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="angel.gif" alt="">
+    <script>
+        var pic = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            // 1. mousemove只要我们鼠标移动1px 就会触发这个事件
+            // 2.核心原理： 每次鼠标移动，我们都会获得最新的鼠标坐标， 把这个x和y的坐标作为图片的top和left值 就可以移动图片了
+            var x = e.pageX;
+            var y = e.pageY;
+            // 3. 千万不要忘记给left 和 top 添加px单位
+            // 由于图片是跟着坐标的左上角对齐跟随的，所以我们需要把left和top值分别减去图片的宽和高
+            pic.style.left = x - 50 + 'px';
+            pic.style.top = y - 40 + 'px';
+        });
+    </script>
+</body>
+
+</html>

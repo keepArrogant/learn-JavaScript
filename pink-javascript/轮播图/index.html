@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        #box {
+            width: 721px;
+            height: 455px;
+            background-color: red;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #box ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 4000px;
+            overflow: hidden;
+        }
+
+        #box ul li {
+            float: left;
+        }
+
+        #box .you {
+            position: absolute;
+            /* 如果一个盒子 有绝对定位  相对于 带有定位的父元素
+                假如没有定位的父元素 那么是相对于body来定位
+             */
+            top: 212px;
+            right: 0;
+            display: none;
+        }
+
+        #box .zuo {
+            position: absolute;
+            /* 如果一个盒子 有绝对定位  相对于 带有定位的父元素
+                假如没有定位的父元素 那么是相对于body来定位
+             */
+            top: 212px;
+            left: 0;
+            /* display: none; 是让 当前盒子  隐藏下去 */
+            display: none;
+        }
+
+        #box:hover .zuo {
+            /* display: block;转化块级元素  还能让当前盒子 显示出来 */
+            display: block;
+        }
+
+        #box:hover .you {
+            display: block;
+        }
+
+        #box .you:hover {
+            cursor: pointer;
+        }
+
+        #box .zuo:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1、先把轮播图的 页面结构 完善  
+
+        html和css 的内容
+    
+    -->
+    <div id="box">
+        <!-- 要在这个盒子里边  去实现 轮播图的页面 -->
+        <ul id="ul">
+            <li><img src="./images/focus.jpg" alt=""></li>
+            <li><img src="./images/focus1.jpg" alt=""></li>
+            <li><img src="./images/focus2.jpg" alt=""></li>
+            <li><img src="./images/focus3.jpg" alt=""></li>
+            <li><img src="./images/focus.jpg" alt=""></li>
+        </ul>
+        <img src="./images/arrow-next.png" alt="" class="you" id="you">
+        <img src="./images/arrow-prev.png" alt="" class="zuo" id="zuo">
+    </div>
+    <script>
+        // 1、先获取过来 右边的 按钮
+        var you = document.getElementById('you');
+        var ul = document.getElementById('ul');
+        // 2、就是给这个右箭头 注册一个点击事件click
+        // 2.1这里需要设置一个变量   用来与点击次数 相对应的
+        var a = 0;
+        you.onclick = function () {
+            var step = Math.abs(parseInt(ul.style.marginLeft || 0));
+            console.log(step);
+            // console.log('我是you点击里边的代码');
+            // 这里 需要有一个判断 条件  判断a的值  当a=3的时候  再点击 那就的让a重新为0
+            if (a == 4) {
+                a = 0
+                ul.style.marginLeft = 0 + 'px';
+                you.click();
+                // you.click(); 是 让这个点击事件 自己 执行一次
+                return;
+                // 当return 在function中出现的实现  如果执行了return 那么它后边的代码都不执行了 
+            }
+            a++;
+            console.log(a);
+            var timer = setInterval(function () {
+                step += 20;
+                //  a++   ==>   a = a +1
+                // 让谁走？
+                ul.style.marginLeft = -step + 'px';
+                if (step >= 721 * a) {
+                    ul.style.marginLeft = -721 * a + 'px';
+                    clearInterval(timer)
+                }
+            }, 30)
+        }
+
+
+        var zuo = document.getElementById('zuo');
+        var b = 4;
+        zuo.onclick = function () {
+            var step1 = Math.abs(parseInt(ul.style.marginLeft || 0));
+            console.log(step1);
+
+            if (b == 0) {
+                b = 4
+                ul.style.marginLeft = 0 + 'px';
+                zuo.click();
+                return;
+            }
+            b--;
+            console.log(b);
+
+            var timer1 = setInterval(function () {
+                step1 -= 20;
+
+                ul.style.marginLeft = -step1 + 'px';
+                if (step1 <= 721 * b) {
+                    ul.style.marginLeft = -721 * b + 'px';
+                    clearInterval(timer1)
+                }
+            }, 30)
+        }
+
+    </script>
+
+</body>
+
+</html>

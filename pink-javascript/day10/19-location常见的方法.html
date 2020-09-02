@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location常见的方法</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            // 记录浏览历史，所以可以实现后退功能 ,跟href一样，可以跳转页面(也称为重定向页面)
+            // location.assign('http://www.baidu.com');
+            // 不记录浏览历史，所以不可以实现后退功能 替换当前页面，因为不记录历史，所以不能后退页面
+            // location.replace('http://www.baidu.com');
+            // 重新加载页面，相当于刷新按钮或者f5 如果参数为true 强制刷新ctrl+f5
+            location.reload();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示隐藏文本框内容</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="" value="手机">
+    <script>
+        // 1.获取元素
+        var text = document.querySelector('input');
+        // 2.注册事件 获得焦点事件 onfocus
+        text.onfocus = function () {
+            if (this.value === '手机') {
+                this.value = '';
+            }
+            // 获得焦点需要把文本框里面的文字颜色变黑
+            this.style.color = '#333';
+        }
+
+        // 3.注册事件 失去焦点事件 onblur
+        text.onblur = function () {
+            if (this.value === '') {
+                this.value = '手机';
+            }
+            // 失去焦点需要把文本框里面的文字变浅
+            this.style.color = '#999';
+        }
+    </script>
+</body>
+
+</html>

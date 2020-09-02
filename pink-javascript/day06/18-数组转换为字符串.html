@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组转换为字符串</title>
+    <script>
+        // 数组转换为字符串
+        // 1. toString() 将我们的数组转换为字符串
+        var arr = [1, 2, 3];
+        console.log(arr.toString()); //1,2,3
+
+        // 2.join(分隔符)
+        var arr1 = ['green', 'pink', 'blue'];
+        console.log(arr1.join()); // green,pink,blue
+        console.log(arr1.join('-')); //green-pink-blue
+        console.log(arr1.join('&')); //green&pink&blue
+
+        console.log('-----------------------------------');
+        // 3.concat() 连接两个或者多个数组 不影响原数组  返回一个新的数组
+        console.log(arr.concat(arr1));
+        // 4.slice() 数组截取slice(begin, end)  返回被截取项目的新数组
+        console.log(arr.slice(1, 2));   //[begin, end)  arr.slice(1,2) 结果为2
+        // 5.splice() 数组删除splice(第几个开始, 要删除个数)  返回被删除项目的新数组 注意，这个会影响原数组
+        arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        console.log(arr2.splice(3, 2)); //[4,5]
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

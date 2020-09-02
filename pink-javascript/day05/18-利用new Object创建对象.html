@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用new Object创建对象</title>
+    <script>
+        var obj = new Object();  //创建了一个空的对象
+        obj.uname = '张三丰';
+        obj.age = 18;
+        obj.sex = '男';
+        obj.sayHi = function () {
+            console.log('Hi~');
+        }
+        //(1) 我们是利用 等号 = 赋值的方法 添加对象的属性和方法
+        //(2) 每个属性和方法之间用分号结束
+
+        console.log(obj.uanem);
+        console.log(obj['sex']);
+        obj.sayHi();
+
+
+        //请用new Object 形式创建一个鸣人对象
+        var sasike = new Object();
+        sasike.name = '鸣人';
+        sasike.sex = '男';
+        sasike.age = 19;
+        sasike.skill = function () {
+            console.log('影分身术');
+        }
+        console.log(sasike.name);
+        console.log(sasike['age']);
+        sasike.skill();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

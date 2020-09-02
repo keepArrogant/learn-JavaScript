@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素之修改样式属性</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 1.获取元素
+        var div = document.querySelector('div');
+        // 2.注册事件  处理程序
+        div.onclick = function () {
+            // div.style里面的属性 采用驼峰命名法
+            // 使用js修改的属性会内嵌到行里面，行内样式权重比外联css高，这也就是为什么js点击图片会修改颜色的原因
+            this.style.backgroundColor = 'purple';
+            this.style.width = '300px';
+        }
+    </script>
+</body>
+
+</html>

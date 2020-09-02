@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三种创建元素方式区别</title>
+</head>
+
+<body>
+    <p>abc</p>
+    <div>567</div>
+    <button>按钮</button>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        // 三种创建元素方式区别
+        // 1. document.write() 创建元素  如果页面文档流加载完毕 ，再调用这句话会导致页面重绘
+        // var btn = document.querySelector('button');
+        // btn.onclick = function () {
+        //     document.write('<div>123</div>');
+        // }
+
+        // window.onload = function () {
+        //     document.write('<div>123</div>');
+        // }
+
+        // 2.innerHTML 创建元素
+        var innner = document.querySelector('.inner');
+        for (var i = 0; i <= 100; i++) {
+            inner.innerHTML += '<a href="#">百度</a>';
+        }
+
+        // 上面的innerHTML拼接太慢了 下面通过数组push添加来创建元素
+        var arr = [];
+        for (var i = 0; i <= 100; i++) {
+            arr.push('<a href="#">百度</a>');
+        }
+        inner.innerHTML = arr.join('');
+
+        // 3.document.createElement() 创建元素
+        var create = document.createElement('a');
+        create.appendChild(a);
+
+    </script>
+
+    <h4>三种动态创建元素区别</h4>
+    <ul>
+        <li>document.write()</li>
+        <li>element.innerHTML</li>
+        <li>document.createElement()</li>
+    </ul>
+    <h4>区别</h4>
+    <p>1. document.write 是直接将内容写入页面的内容流，但是文档流执行完毕，则它会导致页面全部重绘</p>
+    <p>2. innerHTML 是将内容写入某个DOM节点，不会导致页面全部重绘</p>
+    <p>3. innerHTML 创建多个元素效率更高(不要拼接字符串，采取数组形式拼接),结构稍微复杂</p>
+    <p>4. createElement() 创建多个元素效率稍低一点点，但是结构更清晰，比innerHTML拼接字符串效率要高！</p>
+    <p style="color: red;">总结：不同浏览器下，innerHTML效率要比 createElement 高</p>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组去重(删除指定数组元素)</title>
+    <script>
+        // 将数组[2,0,6,1,77,0,52,0,25,7]中的0去掉后，形成一个不含有0的新数组
+        // 1.需要一个新数组用于存放筛选之后的数据
+        // 2.遍历原来的数组，把不是0的数据添加到新数组里面(此时要注意采用数组名 + 索引的格式接收数据)
+        // 3.新数组里面的个数 ，用length 不断累加
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

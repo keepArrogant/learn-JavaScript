@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兄弟节点</title>
+
+</head>
+
+<body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <script>
+        var div = document.querySelector('div');
+        // 1.nextSibling 下一个兄弟节点 包含元素节点或者 文本节点等等
+        console.log(div.nextSibling); //该情况下是 next文本节点
+        // 2.previousSibling 上一个兄弟节点
+        console.log(div.previousSibling); //该情况下是 next文本节点
+
+
+        // 3.nextElementSibling 得到下一个兄弟元素节点      IE9上支持
+        console.log(div.nextElementSibling);
+        // 4.previousElementSibling 得到上一个兄弟元素节点
+        console.log(div.previousElementSibling);
+
+        // 封装兼容性的函数 针对 下一个兄弟节点元素
+        function getNextElementSibling(element) {
+            var el = element;
+            while (el = el.nextSibling) {
+                if (el.nodeType === 1) {
+                    return el;
+                }
+            }
+            return null;
+        }
+
+    </script>
+    <hr>
+    <h4>兄弟节点</h4>
+    <h5 style="color: red;">问：如何解决兼容性问题？</h5>
+    <h5>答：自己封装一个兼容性的函数</h5>
+    <p>
+        function getNextElementSibling(element) {
+        var el = element;
+        while (el = el.nextSibling) {
+        if (el.nodeType === 1) {
+        return el;
+        }
+        }
+        return null;
+        }
+    </p>
+</body>
+
+</html>

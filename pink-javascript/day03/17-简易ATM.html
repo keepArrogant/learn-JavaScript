@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易ATM</title>
+    <script>
+        // 里面现存有100块钱
+        // 如果存钱，就用输入钱数加上先存的钱数，之后弹出余额提示框
+        // 如果取钱。就减去取的钱数。之后弹出显示余额提示框
+        // 如果显示余额，就输出余额
+        // 如果退出，弹出退出信息提示框
+
+        var sum = 100;
+        while (true) {
+            i = prompt('请输入你要办理的业务序号：\n 1.存钱\n 2.取钱\n 3.显示余额\n 4.退出');
+            i = parseFloat(i);
+            if (i == 1) {
+                var qian = prompt('请您输入存的钱数：');
+                sum += parseFloat(qian);
+                alert('存入成功，您的余额为' + sum);
+            }
+            else if (i == 2) {
+                var qu = prompt('请您输入取的钱数：');
+                sum -= parseFloat(qu);
+                alert('取钱成功，您的余额为' + sum);
+            }
+            else if (i == 3) {
+                alert('您的余额为' + sum);
+            }
+            else if (i == 4) {
+                alert('正在执行退出操作,请稍后...');
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符优先级</title>
+</head>
+
+<body>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>优先级</th>
+            <th>运算符</th>
+            <th>顺序</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>小括号</td>
+            <td>()</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>一元运算符</td>
+            <td>++ -- ！</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>算数运算符</td>
+            <td>先*/%后+-</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>关系运算符</td>
+            <td>> >= 小于 小于=</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>相等运算符</td>
+            <td>== != === !==</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>逻辑运算符</td>
+            <td>先&& 后||</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>赋值运算符</td>
+            <td>=</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>逗号运算符</td>
+            <td>,</td>
+        </tr>
+    </table>
+    <ul>
+        <li>一元运算符里面的逻辑非优先级很高</li>
+        <li>逻辑与比逻辑或优先级高</li>
+    </ul>
+</body>
+
+</html>

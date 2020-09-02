@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环重复不同的代码</title>
+    <script>
+        // for 循环可以重复执行不同的代码 因为我们有计数器变量 i 的存在 i每次循环值都会变化
+        // 我们想要输出1个人 1~100岁
+        // for (var i = 1; i <= 100; i++) {
+        //     console.log('这个人今年' + i + '岁了');
+        // }
+        for (var i = 1; i <= 100; i++) {
+            if (i == 1) {
+                console.log('这个人出生到现在有1岁啦');
+            } else if (i == 100) {
+                console.log('这个人今天100岁了，他没了');
+            } else {
+                console.log('这个人今年' + i + '岁了');
+            }
+        }
+
+        console.log('--------------------------');
+        var num = prompt('我想对你说多少遍：');
+        for (var i = 1; i <= num; i++) {
+            console.log('我爱你');
+        } 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

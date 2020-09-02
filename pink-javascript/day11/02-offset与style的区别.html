@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offset与style的区别</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="width: 200px;"></div>
+    <script>
+        // offset 与style的区别
+        var box = document.querySelector('.box');
+        console.log(box.offsetWidth);
+        console.log(box.style.width);
+
+        // box.offsetWidth = '300px'; 通过fooset不能改变属性
+        box.style.width = '300px';
+
+    </script>
+
+    <h3>offset 与 style 区别</h3>
+    <br>
+    <ul>
+        <h4 style="color: red;">offset</h4>
+        <li>offset可以得到任意样式表中的样式值</li>
+        <li>offset系列获得的数值是没有单位的</li>
+        <li>offsetWidth包含padding+border+width</li>
+        <li>offset等属性是只读属性，只能获取不能赋值</li>
+        <li style="color: red;">所以，我们想要获取元素大小，用offset更合适</li>
+    </ul>
+    <br>
+    <hr>
+    <ul>
+        <h4 style="color: red;">style</h4>
+        <li>style只能得到行内样式表中的样式值</li>
+        <li>style.width获得的是带有单位的字符串</li>
+        <li>style.width获得不包含padding和border的值</li>
+        <li>style.width是可读写属性，可以获取也可以赋值</li>
+        <li style="color: red;">所以，我们想要给元素更改值，则需要用style改变</li>
+    </ul>
+</body>
+
+</html>

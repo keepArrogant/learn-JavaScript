@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName获取某些元素</title>
+</head>
+
+<body>
+    <ul>
+        <li>知否知否,应是等你好久1</li>
+        <li>知否知否,应是等你好久2</li>
+        <li>知否知否,应是等你好久3</li>
+        <li>知否知否,应是等你好久4</li>
+        <li>知否知否,应是等你好久5</li>
+    </ul>
+    <ul id="nav">
+        <li>蜀道难，难于上青天1</li>
+        <li>蜀道难，难于上青天2</li>
+        <li>蜀道难，难于上青天3</li>
+        <li>蜀道难，难于上青天4</li>
+        <li>蜀道难，难于上青天5</li>
+    </ul>
+    <script>
+        // 1.返回的是 获取过来元素对象的集合  以伪数组的形式存储的
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+        // 2.我们想要依次打印里面的元素对象我们可以采取遍历的方式
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+
+        // 3.elelments.getElementsByTagName() 可以得到这个元素里面的某些标签
+        var nav = document.getElementById('nav');  //这个获得 nav元素
+        var navLis = nav.getElementsByTagName('li');
+        console.log(navLis[0]);
+    </script>
+</body>
+
+</html>

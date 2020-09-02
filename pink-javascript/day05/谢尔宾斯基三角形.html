@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谢尔宾斯基三角形</title>
+
+    <script language="javascript">
+        function draw() {
+            var can = document.getElementById("cantest");
+            if (can.getContext) {
+                can.height = can.height;
+                var ctx = can.getContext("2d");
+                ctx.strokeStyle = "#000";
+
+                var depth = parseInt(document.getElementById("txtDepth").value); //绘制维度
+
+                Sierpinski(ctx, 0.00, 20.00, 0.00, 500 * Math.sin(Math.PI / 3) + 20, 500.00, 500 * Math.sin(Math.PI / 3) + 20, depth, 0);
+            } else {
+                alert("不支持Canvas");
+            }
+        }
+
+
+        function Sierpinski(ctx, x1, y1,
+            x2, y2,
+            x3, y3,
+            depth,      //维度
+            nowDepth) { //当前维度
+            nowDepth = nowDepth + 1;
+
+            if (depth == 0) {
+                return false;
+            }
+
+            if (depth == nowDepth) {
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.lineTo(x3, y3);
+                ctx.fill();     //填充块
+                return false;
+            }
+
+            var x4 = x2 + (x3 - x2) / 2;
+            var x5 = (x1 + x2) / 2;
+            var x6 = x2 + (x3 - x2) * 2 / 4;
+            var y4 = 0.00;
+            var y5 = 0.00;
+            var y6 = 0.00;
+
+            y4 = y1 + (x3 - x2) * Math.sin(Math.PI / 3);
+            y5 = y1 + (x3 - x2) / 2 * Math.sin(Math.PI / 3);
+            y6 = y1 + (x3 - x2) / 2 * Math.sin(Math.PI / 3);
+
+            Sierpinski(ctx, x1, y1, x5, y5, x6, y6, depth, nowDepth);
+            Sierpinski(ctx, x5, y5, x2, y2, x4, y4, depth, nowDepth);
+            Sierpinski(ctx, x6, y6, x4, y4, x3, y3, depth, nowDepth);
+        }
+
+        function getColor() {
+            return '#' + (Math.random() * 0xffffff << 0).toString(16);
+        }
+    </script>
+</head>
+
+<style>
+    canvas {
+        border: 2px solid #000;
+        background: #fff;
+    }
+</style>
+
+<body onload="draw()">
+    <input type="text" value="1" id="txtDepth" />
+    <input type="button" value="绘制" onclick="draw()" />
+    <br />
+    <canvas id="cantest" width="500px" height="500px"></canvas>
+
+</html>

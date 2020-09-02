@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三大系列总结</title>
+</head>
+
+<body>
+    <table border="1" cellspacing='0'>
+        <tr>
+            <th>三大系列大小对比</th>
+            <th>作用</th>
+        </tr>
+        <tr>
+            <td>element.offsetWidth</td>
+            <td>返回自身包括padding、边框、内容区的宽度,返回数值不带单位</td>
+        </tr>
+        <tr>
+            <td>element.clientWidth</td>
+            <td>返回自身包括padding、内容区的宽度，不含边框，返回数值不带单位</td>
+        </tr>
+        <tr>
+            <td>element.scrollWidth</td>
+            <td>返回自身实际的宽度，不含边框，返回数值不带单位</td>
+        </tr>
+    </table>
+    <hr>
+    <br>
+    <p>他们主要用法：</p>
+    <p>1. offset系列经常用于获得元素位置 offsetLeft offsetTop</p>
+    <p>2. client经常用于获取元素大小clientWidth clientHeight</p>
+    <p>3. scroll经常用于获取滚动距离 scrollTop scrollLeft</p>
+    <p>4. 注意页面滚动的距离通过window.pageXOffset</p>
+</body>
+
+</html>

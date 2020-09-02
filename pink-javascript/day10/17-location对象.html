@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location对象</title>
+</head>
+
+<body>
+    <h4>URL</h4>
+    <p>统一资源定位符(Uniform Resource Locator, URL)是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。</p>
+    <p>URL的一般语法格式为：</p>
+    <p>protocol://host[:port]/path/[?query]#fragment</p>
+    <p>http://www.itcast.cn/index.html?name=andy&age=18#link</p>
+    <table cellspacing="0" border="1">
+        <tr>
+            <th>组成</th>
+            <th>说明</th>
+        </tr>
+        <tr>
+            <td>protocol</td>
+            <td>通信协议 常用的http,ftp,maito</td>
+        </tr>
+        <tr>
+            <td>port</td>
+            <td>端口号 可选，省略时使用方案的默认端口 如http的默认端口为80</td>
+        </tr>
+        <tr>
+            <td>path</td>
+            <td>路径 由 零或多个'/'符号隔开的字符串，一般用来表示主机上的一个目录或文件地址</td>
+        </tr>
+        <tr>
+            <td>query</td>
+            <td>参数 以键值对的形式通过&符号分隔开来</td>
+        </tr>
+        <tr>
+            <td>fragment</td>
+            <td>片段 #后面内容 常见于链接 锚点</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h4>location 对象的属性</h4>
+    <table border="1" cellspacing='0'>
+        <tr>
+            <th>location.href</th>
+            <th>获取或者设置 整个URL</th>
+        </tr>
+        <tr>
+            <td>location.host</td>
+            <td>返回主机(域名) www.biadu.com</td>
+        </tr>
+        <tr>
+            <td>location.port</td>
+            <td>返回端口号 如果未写返回 空字符串</td>
+        </tr>
+        <tr>
+            <td>location.pathname</td>
+            <td>返回路径</td>
+        </tr>
+        <tr>
+            <td>location.search</td>
+            <td>返回参数</td>
+        </tr>
+        <tr>
+            <td>location.hash</td>
+            <td>返回片段 #后面内容 常见于链接 锚点</td>
+        </tr>
+    </table>
+    <h3>重点记住：href 和 search</h3>
+</body>
+
+</html>

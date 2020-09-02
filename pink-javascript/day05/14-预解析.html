@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预解析</title>
+    <script>
+        // 1.问
+        console.log(num);   //直接报错
+
+
+        // 2.问
+        console.log(num); //undefined 坑1
+        var num = 10;
+        //相当于执行了以下代码
+        var num;
+        console.log(num);
+        num = 10;
+
+        //3.问
+        fn();//11
+        function fn() {
+            console.log(11);
+        }
+
+
+
+        // 4.问
+        //fun(); //报错， 坑2
+        var fun = function () {
+            console.log(22);
+        }
+        // 相当于执行了以下代码
+        var fun;
+        fun();
+        fun = function () {
+            console.log(22);
+        }
+
+
+        // 1.我们js引擎运行js 分为两步： 预解析  代码执行
+        // (1) : 预解析 js引擎会把js 里面所有的var 还有 function 提升到当前作用域的最前面
+        // (2) ：代码执行 按照代码书写的顺序从上往下执行
+        // 2.预解析分为 变量预解析(变量提升) 和 函数预解析(函数提升)
+        // (1) : 变量提升 就是把所有变量声明提升到当前作用域的最前面 不提升赋值操作
+        // (2) ：函数提升 就是把所有函数声明提升到当前作用域的最前面 不调用函数
+        var s = 500 * Math.sin(Math.PI / 3) + 20;
+        console.log(s);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

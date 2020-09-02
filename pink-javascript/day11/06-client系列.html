@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client系列</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 20px;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <p>client翻译过来就是客户端，我们使用client系列的相关属性来获取元素可视区的相关信息。通过client系列的相关属性可以动态的得到该元素的边框大小、元素大小等</p>
+    <table cellsacping='0' border="1">
+        <tr>
+            <th>client系列属性</th>
+            <th>作用</th>
+        </tr>
+        <tr>
+            <td>element.clientTop</td>
+            <td>返回元素上边框的大小</td>
+        </tr>
+        <tr>
+            <td>element.clientLeft</td>
+            <td>返回元素左边框的大小</td>
+        </tr>
+        <tr>
+            <td>element.clientWidth</td>
+            <td>返回自身包括padding、内容区的宽度，不包含边框，返回数值不带单位</td>
+        </tr>
+        <tr>
+            <td>element.clientHeight</td>
+            <td>返回自身包括padding、内容区的高度，不包含边框，返回数值不带单位</td>
+        </tr>
+    </table>
+    <script>
+        // client 宽度 和我们offsetWidth 最大的区别就是不包含边框
+        var div = document.querySelector('div');
+        console.log(div.clientWidth);
+    </script>
+</body>
+
+</html>

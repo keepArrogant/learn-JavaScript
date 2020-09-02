@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while循环案例</title>
+    <script>
+        // 1.人的一生 到100岁
+        var i = 1;
+        while (i <= 100) {
+            console.log('他今年' + i + '岁了');
+            i++;
+        }
+        // 2.计算1~100之间所有整数的和
+        var sum = 0;
+        var j = 1;
+        while (j <= 100) {
+            sum += j;
+            j++;
+        }
+        console.log(sum);
+        // 3.弹出一个提示框，  必须输入某一段话才能停止循环
+        var message = prompt('不要做舔狗了好吗？');
+        while (message !== '好的') {
+            message = prompt('不要做舔狗了好吗？');
+        }
+        alert('真是只听话的傻狗篮子');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

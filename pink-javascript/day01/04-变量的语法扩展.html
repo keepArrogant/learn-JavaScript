@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量的语法扩展</title>
+    <script>
+        // 1.更新变量
+        var myname = '陈义';
+        console.log(myname);
+        myname = '土狗';
+        console.log(myname);
+        // 2.声明多个变量
+        // var age = 18;
+        // var address = '黄花村';
+        // var gz = 2500;
+        var age = 18,
+            adderss = '黄花村',
+            gz = 2500;
+        // 3.声明变量的特殊情况
+        // 3.1 只声明不赋值 结果是？  程序也布置里面存的是啥 所以结果是 undefined 未定义的
+        var sex;
+        console.log(sex);//undefined
+        // 3.2 不声明 不赋值 直接使用某个变量会报错的
+        console.log(tel);
+        // 3.3 不声明直接赋值使用
+        qq = 110;
+        console.log(qq);
+        // 不会报错，但是这样会污染全局变量，不建议这样使用
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

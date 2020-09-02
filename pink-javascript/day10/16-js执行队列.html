@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js执行队列</title>
+</head>
+
+<body>
+    <script>
+        // 第一个问题
+        console.log(1);
+
+        setTimeout(function () {
+            console.log(3);
+        }, 1000);
+
+        console.log(2);
+
+        // JS中有同步和异步，在执行定时器等待的期间，会执行下面的代码
+
+
+        // 第二个问题
+        console.log(1);
+
+        setTimeout(function () {
+            console.log(3);
+        }, 0);
+
+        console.log(2);
+
+        // 结果还是 依次打印1 2 3 因为js中分为同步任务和异步任务 先执行执行栈中的任务  遇到回调函数会把回调函数放到任务队列里，执行完执行栈中的任务了又把任务队列的回调函数放到执行栈的最后面再执行 
+
+    </script>
+</body>
+
+</html>

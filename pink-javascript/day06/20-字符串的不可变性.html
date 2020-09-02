@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串的不可变性</title>
+    <script>
+        // 字符串的不可变性
+        var str = 'andy';
+        console.log(str);
+        str = 'red';
+        console.log(str);
+        // 因为我们字符串的不可变所以不要大量的拼接字符串
+        var str = '';
+        for (var i = 1; i <= 1000; i++) {
+            // 每拼接一个字符串，原来的字符串开辟的空间不会消失，而新的空间在不断生成，导致内存不够用 卡顿
+            str += i;
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

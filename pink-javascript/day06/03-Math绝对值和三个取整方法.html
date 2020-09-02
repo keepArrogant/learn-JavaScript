@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math绝对值和三个取整方法</title>
+    <script>
+        // 1.绝对值方法
+        console.log(Math.abs(1)); //1
+        console.log(Math.abs(-1)); //1
+        console.log(Math.abs('-1')); //隐式转换 会把字符串型 -1转换为 数字型
+        console.log(Math.abs('red')); //NaN
+
+        // 2.三个取整方法
+        // (1) Math.floor()  地板 向下取整 往最小了取值
+        console.log(Math.floor(1.1)); //1
+        console.log(Math.floor(1.8)); //1
+        // (2) Math.ceil() ceil  天花板 向上取整  往最大了取值
+        console.log(Math.ceil(1.1)); //2
+        console.log(Math.ceil(1.9)); //2
+        console.log(Math.ceil(-1.1)); // -1
+        // (3) Math.round() 四舍五入 其他数字都是四舍五入 但是 .5特殊 它往大了取
+        console.log(Math.round(1.1)); //1
+        console.log(Math.round(1.5)); //2
+        console.log(Math.round(1.9)); //2
+        console.log(Math.round(-1.1)); //-1
+        console.log(Math.round(-1.5)); // 这个结果为-1
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

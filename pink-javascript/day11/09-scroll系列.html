@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll系列</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            margin: 100px auto;
+            padding: 20px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容
+        我是内容 我是内容 我是内容 我是内容</div>
+    <hr>
+    <br>
+
+    <h4>元素scroll系列属性</h4>
+    <p>scroll翻译过来就是滚动的，我们使用scroll系列的相关属性可以动态的得到该元素的大小、滚动距离等</p>
+    <table border="1" cellspacing='0'>
+        <tr>
+            <th>scoll系列属性</th>
+            <th>作用</th>
+        </tr>
+        <tr>
+            <td>element.scrollTop</td>
+            <td>返回被卷去的上侧距离，返回数值不带单位</td>
+        </tr>
+        <tr>
+            <td>element.scrollLeft</td>
+            <td>返回被卷去的左侧距离，返回数值不带单位</td>
+        </tr>
+        <tr>
+            <td>element.scrollWidth</td>
+            <td>返回自身实际的宽度，不含边框，返回数值不带单位</td>
+        </tr>
+        <tr>
+            <td>element.scrollHeight</td>
+            <td>返回自身实际的高度，不含边框，返回数值不带单位</td>
+        </tr>
+    </table>
+    <script>
+        // srcoll 系列 
+        var div = document.querySelector('div');
+        console.log(div.scrollHeight);
+        console.log(div.clientHeight);
+        // scroll滚动事件当我们滚动条发生变化会触发的事件
+        div.addEventListener('scroll', function () {
+            console.log(div.scrollTop);
+        })
+    </script>
+</body>
+
+</html>

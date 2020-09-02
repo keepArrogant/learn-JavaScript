@@ -1,0 +1,452 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* img {
+    margin: 0;
+    padding: 0;
+} */
+
+.w {
+    width: 1228px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.top {
+    overflow: hidden;
+    height: 40px;
+    background: #333333;
+}
+
+.top li {
+    float: left;
+    margin: 12px 7px;
+    color: #3d423d;
+}
+
+.top li a {
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.top li:nth-last-child(2) {
+    margin-left: 510px;
+}
+
+.nav {
+    overflow: hidden;
+    height: 100px;
+}
+
+.nav a img {
+    float: left;
+    margin: 20px 0;
+    margin-right: 40px;
+}
+
+.tag {
+    overflow: hidden;
+    width: 872px;
+}
+
+.tag li {
+    float: left;
+    margin: 42px 12px;
+}
+
+.tag li a {
+    font-size: 16px;
+    color: #333333;
+}
+
+.search {
+    overflow: hidden;
+    position: relative;
+    top: -103px;
+    right: -2px;
+    float: right;
+    width: 294px;
+    height: 51px;
+    margin: 25px 0;
+}
+
+.search input {
+    float: left;
+    width: 240px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    border-right: 0;
+}
+
+.search button {
+    float: left;
+    height: 50px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nei {
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+}
+
+.nei li {
+    float: left;
+    padding: 0 5px;
+    margin: 0 5px;
+    background: #eeeeee;
+    color: #757575;
+    font-size: 12px;
+}
+
+.title {
+    overflow: hidden;
+    height: 40px;
+    background: #f5f5f5;
+}
+
+.title li {
+    float: left;
+    padding-right: 10px;
+    margin: 8px 0;
+    color: #616161;
+    font-size: 12px;
+}
+
+.title li a {
+    color: #616161;
+    font-size: 12px;
+}
+
+/* 电视尺寸分类 */
+
+.tv {
+    overflow: hidden;
+    height: 80px;
+    background: #fff;
+}
+
+.tv li {
+    float: left;
+    margin: 32px 30px;
+}
+
+.tv li a {
+    font-size: 12px;
+    color: #333333;
+}
+
+.tv li:nth-child(1) a {
+    font-weight: 700;
+}
+
+.tv li:nth-last-child(1) a {
+    color: #ff6700;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('fonts/iconfont.eot');
+    src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'), url('fonts/iconfont.woff2') format('woff2'), url('fonts/iconfont.woff') format('woff'), url('fonts/iconfont.ttf') format('truetype'), url('fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 12px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.tv li:nth-last-child(1) ::after {
+    font-family: 'iconfont';
+    content: '\e6a8';
+    color: #ff6700;
+    font-size: 12px;
+}
+
+/* 购买详情 */
+
+.shop {
+    overflow: hidden;
+    background: #f5f5f5;
+    margin-top: 15px;
+}
+
+.shop li {
+    float: left;
+    height: 500px;
+    margin-bottom: 13px;
+    background-color: #fff;
+}
+
+.shop li:nth-child(odd) {
+    margin-right: 10px;
+}
+
+.page {
+    position: relative;
+    width: 525px;
+    height: 128px;
+    background: #fff;
+    border-top: 1px solid #f5f5f5;
+    margin: 0 40px;
+    padding-top: 35px;
+}
+
+.page h4 {
+    font-size: 24px;
+}
+
+.page p {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #757575;
+}
+
+.page button {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    float: right;
+    width: 158px;
+    height: 38px;
+    border: 1px solid #ff6700;
+    background: #fff;
+    font-size: 16px;
+    color: #ff6700;
+}
+
+/* 大图 */
+
+.phone {
+    position: relative;
+    height: 600px;
+}
+
+.phone img {
+    width: 100%;
+}
+
+.data {
+    position: absolute;
+    bottom: 0;
+    width: 1228px;
+    height: 160px;
+    padding-left: 75px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.data h4 {
+    margin-top: 45px;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.data p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.data li {
+    position: absolute;
+    margin-top: 10px;
+    width: 178px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    border: 1px solid #ff6700;
+}
+
+.data li:nth-child(odd) {
+    top: 80px;
+    right: 35px;
+}
+
+.data li:nth-child(even) {
+    top: 25px;
+    right: 35px;
+}
+
+.data li a {
+    font-size: 12px;
+    color: #ff6700;
+}
+
+/* 售后 */
+
+.after {
+    height: 80px;
+    border: 1px solid #e0e0e0;
+}
+
+.after li {
+    float: left;
+    width: 243px;
+    height: 25px;
+    margin: 30px 0;
+    text-align: center;
+    line-height: 25px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.after li:nth-last-child(1) {
+    border: 0;
+}
+
+.after li a {
+    font-size: 16px;
+    color: #616161;
+}
+
+/* 链接 */
+
+.d {
+    overflow: hidden;
+    width: 1228px;
+    height: 195px;
+    background: #fff;
+}
+
+.link {
+    float: left;
+    width: 975px;
+    height: 195px;
+}
+
+.link ul {
+    float: left;
+    margin-right: 100px;
+    margin-top: 40px;
+}
+
+.link ul a {
+    display: inline-block;
+    font-size: 14px;
+    color: #424242;
+    margin-bottom: 30px;
+}
+
+.link ul li a {
+    display: inline;
+    font-size: 12px;
+    color: #757575;
+}
+
+.contact {
+    float: right;
+    width: 250px;
+    height: 120px;
+    margin-top: 40px;
+    padding-left: 55px;
+    border-left: 1px solid #e0e0e0;
+}
+
+.contact h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #ff6700;
+}
+
+.contact p {
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #616161;
+}
+
+.contact a {
+    display: inline-block;
+    width: 118px;
+    height: 28px;
+    margin-top: 13px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #ff6700;
+    font-size: 12px;
+    color: #ff6700;
+}
+
+/* 尾部 */
+
+.tail {
+    height: 165px;
+    background: #fafafa;
+}
+
+.tail .w {
+    overflow: hidden;
+    background: #fafafa;
+}
+
+.tail .w img {
+    float: left;
+}
+
+.tail .w .imgs {
+    float: right;
+    width: 370px;
+    height: 35px;
+    padding-left: 30px;
+}
+
+.tail .w .imgs img {
+    float: left;
+    width: 85px;
+    height: 30px;
+}
+
+.tails {
+    float: left;
+    width: 730px;
+    height: 58px;
+    padding-left: 25px;
+}
+
+.tails li {
+    font-size: 12px;
+    color: #757575;
+    float: left;
+}
+
+.tails li a {
+    font-size: 12px;
+    color: #757575;
+}
+
+.tails p {
+    float: left;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.mi {
+    width: 270px;
+    height: 20px;
+    margin: 105px 479px;
+}
+
+.mi h4 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #bebebe;
+}
